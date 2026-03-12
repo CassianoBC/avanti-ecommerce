@@ -36,29 +36,43 @@
             </p>
         </div>
     </div>
-    <header class="pt-5 pb-4.5 shadow-md">
+    <header class="pt-5 xl:pb-4.5 shadow-md">
         <div class="container w-full px-3">
             <div class="flex justify-between items-center">
-                <img class="max-w-38 mr-16.5 block" src="./assets/images/avanti_logo.png" alt="Logo da Avanti">
-                <div
-                    class="flex items-center justify-between mr-68.75 max-w-148.5 w-full border border-[#DDDDDD] rounded-[10px] ">
-                    <input class="px-6 w-full" type="text" placeholder="Digite aqui o que você procura">
-                    <button class="my-2.5 mx-4" class="cursor-pointer">
-                        <img src="./assets/images/icons/search-icon.svg" alt="Ícone de busca">
-                    </button>
+                <img class="xl:hidden h-5.25 w-5.75" src="./assets/images/icons/menu-icon.svg" alt="Logo menu">
+                <div class="flex items-center justify-center xl:justify-start max-w-225  w-full gap-16.5">
+                    <img class="max-w-38 block" src="./assets/images/avanti_logo.png" alt="Logo da Avanti">
+                    <div
+                        class="hidden lg:flex items-center justify-between  max-w-148.5 w-full border border-[#DDDDDD] rounded-[10px] ">
+                        <input class="px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]" type="text"
+                            placeholder="Digite aqui o que você procura">
+                        <button class=" cursor-pointer p-3.25  rounded-e-[10px] ">
+                            <img src="./assets/images/icons/search-icon.svg" alt="Ícone de busca">
+                        </button>
+                    </div>
                 </div>
-                <div class="flex items-center">
+                <div class="flex relative gap-6 items-center">
                     <div class="hidden xl:flex">
                         <img class="h-6 mr-2" src="./assets/images/icons/person-icon.svg" alt="Ícone de usuário">
-                        <p class="text-sm leading-3.5 mr-6 font-semibold">Olá, <br> Nome cliente!</p>
+                        <p class="text-sm leading-3.5 font-semibold">Olá, <br> Nome cliente!</p>
                     </div>
-                    <div class="relative">
-                        <img class="h-6" src="./assets/images/icons/cart-icon.svg" alt="Ícone de carrinho">
+                    <div class="relative mr-2.5 xl:mr-0 cursor-pointer">
+                        <img class="h-6 w-6.25" src="./assets/images/icons/cart-icon.svg" alt="Ícone de carrinho">
                         <div
                             class="bg-[#005cff] rounded-full flex items-center justify-center px-2 py-0.75 text-[12px] font-semibold text-white absolute -top-2.5 -right-2.5 ">
                             <span>0</span>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="flex justify-center lg:hidden mt-7.5">
+                <div
+                    class="flex items-center justify-between max-w-148.5 w-full border border-[#DDDDDD] rounded-[10px] ">
+                    <input class="px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]" type="text"
+                        placeholder="Digite aqui o que você procura">
+                    <button class=" cursor-pointer p-3.25  rounded-e-[10px] ">
+                        <img src="./assets/images/icons/search-icon.svg" alt="Ícone de busca">
+                    </button>
                 </div>
             </div>
             <div class="mt-5.75 flex items-center">
@@ -101,11 +115,14 @@
     </header>
     <section class="bg-[#EBEBEB]">
         <div class="container flex justify-center">
-            <img class="max-w-171.25 block" src="./assets/images/hero-img.jpg" alt="Imagem do hero">
-            <div class="flex flex-col justify-center">
-                <h1 class="text-[100px] font-light"><b class="font-bold uppercase">SUPER</b>SALE</h1>
-                <p class="text-[25px] font-bold text-[#005CFF] tracking-[30%] uppercase">Itens selecionados com até</p>
-                <h2 class="text-[60px] font-bold uppercase text-center text-[#005CFF]">50%off</h2>
+            <img class="w-[70%] xl:max-w-171.25 min-h-76.5 max-h-127.5 object-cover object-right flex"
+                src="./assets/images/hero-img.jpg" alt="Imagem do hero">
+            <div class="flex flex-col mr-20 xl:m-0 text-center justify-center">
+                <h1 class="text-[40px] leading-10 xl:leading-[100%] xl:text-[100px] font-light"><b
+                        class="font-bold uppercase">SUPER</b><br class="xl:hidden">SALE</h1>
+                <p class="text-[12px] xl:text-[25px] font-bold text-[#005CFF] tracking-[30%] uppercase">Itens
+                    selecionados com até</p>
+                <h2 class="text-[32px] xl:text-[60px] font-bold uppercase text-center text-[#005CFF]">50%off</h2>
             </div>
         </div>
     </section>
@@ -220,12 +237,14 @@
         </div>
     </section>
     <section class="mb-13.75">
-        <div class="container flex gap-9.25 h-186.75 justify-center">
-            <div class="bg-[#C2C2C2] max-w-163 w-full flex items-center justify-center">
-                <img class="max-w-131.25" src="./assets/images/mug-img.png" alt="caneca de porcelana com logo avanti">
+        <div class="container grid grid-cols-1 xl:grid-cols-2 justify-items-center xl:justify-items-start gap-9.25">
+            <div class="bg-[#C2C2C2] max-w-163 w-full xl:h-186.75 flex items-center justify-center">
+                <img class="max-w-131.25 w-full object-center" src="./assets/images/mug-img.png"
+                    alt="caneca de porcelana com logo avanti">
             </div>
-            <div class="flex flex-col text-start justify-center max-w-121.75 gap-5.5 text-lg">
-                <h2 class="uppercase text-[30px] font-bold tracking-[4%]">Lorem Ipsum</h2>
+            <div
+                class="flex flex-col text-start justify-center max-w-121.75 mx-6 xl:mx-0  gap-5.5 text-[14px] xl:text-lg">
+                <h2 class="uppercase text-2xl xl:text-[30px] font-bold tracking-[4%]">Lorem Ipsum</h2>
                 <p>
                     Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut
                     eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia
@@ -244,52 +263,59 @@
         </div>
     </section>
     <section class="bg-[#DEDEDE]">
-        <div class="container flex justify-center text-[#4F4F4F] py-11.25 gap-11.5">
-            <div class="max-w-119 flex flex-col justify-center gap-12.5">
-                <h2 class="text-center text-[30px] font-bold uppercase tracking-[4%]">lorem ipsum</h2>
-                <div class="flex flex-col gap-12.5">
-                    <div class="flex items-center gap-5">
-                        <div class="bg-[#005CFF] h-22.5 w-22.5 flex items-center justify-center rounded-full">
-                            <img class="w-11.25 object-cover" src="./assets/images/icons/map-pin.svg"
+        <div class="container flex flex-wrap-reverse justify-center text-[#4F4F4F] py-11.25 gap-5.25 lg:gap-11.5">
+            <div class="max-w-119 flex flex-col justify-center">
+                <h2 class="text-center text-[20px] lg:text-[30px] font-bold uppercase tracking-[4%] pb-5.25 lg:pb-12.5">
+                    lorem ipsum</h2>
+                <div class="flex flex-col w-full gap-5.25 lg:gap-12.5 px-5 xl:px-0 text-[12px] lg:text-lg">
+                    <div class="flex items-center gap-3.5 lg:gap-5">
+                        <div
+                            class="bg-[#005CFF] h-15 w-full max-w-15 lg:h-22.5 lg:w-full lg:max-w-22.5 flex items-center justify-center rounded-full">
+                            <img class="w-7.5 xl:w-11.25" src="./assets/images/icons/map-pin.svg"
                                 alt="icon de pointer mapa">
                         </div>
-                        <p class="text-lg tracking-[5%] max-w-90 ">
+                        <p class="tracking-[5%] leading-[140%] w-full max-w-90 ">
                             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
                             ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
                         </p>
                     </div>
-                    <div class="flex items-center gap-5">
-                        <div class="bg-[#005CFF] h-22.5 w-22.5 flex items-center justify-center rounded-full">
-                            <img class="w-11.25 object-cover" src="./assets/images/icons/map-pin.svg"
+                    <div class="flex items-center gap-3.5 lg:gap-5">
+                        <div
+                            class="bg-[#005CFF] h-15 w-full max-w-15 lg:h-22.5 lg:w-full lg:max-w-22.5 flex items-center justify-center rounded-full">
+                            <img class="w-7.5 block xl:w-11.25" src="./assets/images/icons/map-pin.svg"
                                 alt="icon de pointer mapa">
                         </div>
-                        <p class="text-lg tracking-[5%] max-w-90 ">
+                        <p class="tracking-[5%] leading-[140%] w-full max-w-90 ">
                             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
                             ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
                         </p>
                     </div>
-                    <div class="flex items-center gap-5">
-                        <div class="bg-[#005CFF] h-22.5 w-22.5 flex items-center justify-center rounded-full">
-                            <img class="w-11.25 object-cover" src="./assets/images/icons/map-pin.svg"
+                    <div class="flex items-center gap-3.5 lg:gap-5">
+                        <div
+                            class="bg-[#005CFF] h-15 w-full max-w-15 lg:h-22.5 lg:w-full lg:max-w-22.5 flex items-center justify-center rounded-full">
+                            <img class="w-7.5 xl:w-11.25" src="./assets/images/icons/map-pin.svg"
                                 alt="icon de pointer mapa">
                         </div>
-                        <p class="text-lg tracking-[5%] max-w-90 ">
+                        <p class="tracking-[5%] leading-[140%] w-full max-w-90 ">
                             Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
                             ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
                         </p>
                     </div>
                 </div>
             </div>
-            <img class="max-w-163 " src="./assets/images/mug-img2.jpg" alt="Caneca de porcelana com logo da Avanti 2">
+            <img class="max-w-163 w-full px-5 lg:px-0 object-cover" src="./assets/images/mug-img2.jpg"
+                alt="Caneca de porcelana com logo da Avanti 2">
         </div>
     </section>
-    <section class="mb-16 mt-11.5">
-        <div class="container flex gap-9.25 h-186.75 justify-center">
-            <div class="bg-[#C2C2C2] max-w-163 w-full flex items-center justify-center">
-                <img class="max-w-131.25" src="./assets/images/mug-img.png" alt="caneca de porcelana com logo avanti">
+    <section class="my-13.75">
+        <div class="container grid grid-cols-1 xl:grid-cols-2 justify-items-center xl:justify-items-start gap-9.25">
+            <div class="bg-[#C2C2C2] max-w-163 w-full xl:h-186.75 flex items-center justify-center">
+                <img class="max-w-131.25 w-full object-center" src="./assets/images/mug-img.png"
+                    alt="caneca de porcelana com logo avanti">
             </div>
-            <div class="flex flex-col text-start justify-center max-w-121.75 gap-5.5 text-lg">
-                <h2 class="uppercase text-[30px] font-bold tracking-[4%]">Lorem Ipsum</h2>
+            <div
+                class="flex flex-col text-start justify-center max-w-121.75 mx-6 xl:mx-0  gap-5.5 text-[14px] xl:text-lg">
+                <h2 class="uppercase text-2xl xl:text-[30px] font-bold tracking-[4%]">Lorem Ipsum</h2>
                 <p>
                     Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut
                     eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia
@@ -420,32 +446,37 @@
     <section
         class="bg-[url('./assets/images/cta-bg.jpg')] bg-cover bg-center h-165 bg-no-repeat flex flex-col justify-center">
         <div class="flex flex-col justify-center items-center bg-[#005CFF] h-33">
-            <p class="text-[30px] text-white">
+            <p class="text-center text-[16px] font-semibold md:text-[30px] px-10 text-white">
                 Entre em contato conosco e verifique a disponibilidade para sua região!
             </p>
         </div>
     </section>
     <section class="mt-16 mb-10">
         <div class="container flex flex-col justify-center items-center">
-            <h2 class="mb-6 text-[20px] font-bold">Cadastre-se na nossa <span class="text-[#005CFF]">newsletter</span>
+            <h2 class="mb-6 text-[16px] xl:text-[20px] font-bold">Cadastre-se na nossa <span
+                    class="text-[#005CFF]">newsletter</span>
             </h2>
-            <form class="bg-[#DEDEDE] flex w-full rounded-lg gap-6 py-16 px-28">
-                <input class="bg-white rounded-lg py-4 px-6 w-70" type="text" placeholder="Digite seu nome" />
-                <input class="bg-white rounded-lg py-4 px-6 w-70" type="email" placeholder="Digite seu e-mail" />
-                <div class="flex items-center gap-2">
+            <form
+                class="bg-[#DEDEDE] flex flex-col xl:flex-row w-[90%] xl:w-full rounded-lg gap-6 py-16 px-4 mx-5 xl:px-28">
+                <input class="bg-white rounded-lg py-4 px-6 w-full xl:w-70" type="text" placeholder="Digite seu nome" />
+                <input class="bg-white rounded-lg py-4 px-6 w-full xl:w-70" type="email"
+                    placeholder="Digite seu e-mail" />
+                <div class="flex items-center justify-center gap-2">
                     <input class="border-none" type="checkbox" />
                     <p class="text-[12px] text-[#303030]">Estou de acordo com a <span class="underline">Política de
                             Privacidade</span></p>
                 </div>
-                <button class="bg-[#005CFF] text-[16px] text-white font-bold py-3.5 px-6 rounded-lg">Cadastrar</button>
+                <button
+                    class="bg-[#005CFF] text-[16px] text-white font-bold py-3.5 px-6 rounded-lg cursor-pointer">Cadastrar</button>
             </form>
         </div>
     </section>
     <footer>
         <div class="bg-[#F5F5F5] py-16">
             <div class="container">
-                <div class="flex text-[14px] text-[#303030] justify-center gap-35.5 pb-16">
-                    <div class="flex flex-col gap-10">
+                '<div
+                    class="flex flex-col lg:flex-row text-[14px] text-[#303030] justify-center gap-12 lg:gap-35.5 pb-16">
+                    <div class="flex flex-col items-center lg:items-start lg:pl-5 xl:pl-0 gap-10">
                         <img class="max-w-38" src="./assets/images/avanti_logo.png" alt="Logo da Avanti">
                         <div class="flex gap-10">
                             <img src="./assets/images/icons/logo-instagram.svg" alt="Logo do Instagram">
@@ -454,33 +485,55 @@
                             <img src="./assets/images/icons/logo-tiktok.svg" alt="Logo do TikTok">
                         </div>
                     </div>
-                    <div class="flex gap-27.5">
-                        <article class="flex flex-col ">
-                            <h4 class="text-black text-[12px] font-bold mb-2.75">Institucional</h4>
-                            <h5>Sobre nós</h5>
-                            <h5>Nossas lojas</h5>
-                            <h5>Privacidade e segurança</h5>
-                            <h5>Termos e Condições</h5>
+                    <div class="flex flex-col md:flex-row items-center md:items-start md:justify-center md:gap-27.5">
+                        <article id="dropDown1" class="flex flex-col md:flex-col w-full md:w-full">
+                            <div 
+                                class="dropdown-btn flex justify-between border-y md:border-none border-[#DDDDDD] items-center w-full">
+                                <h4 class="text-black text-[12px] py-4.5 mx-4 md:p-0 md:mx-0  font-bold md:mb-2.75">Institucional</h4>
+                                <img class="seta md:hidden h-4 w-4 mx-4" src="./assets/images/icons/arrow.png"
+                                    alt="Seta para baixo">
+                            </div>
+                            <div class="dropdown-content md:flex hidden bg-white md:bg-transparent flex-col justify-start">
+                                <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Sobre Nós</h5>
+                                <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Nossas Lojas</h5>
+                                <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Privacidade e Segurança</h5>
+                                <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Termos e Condições</h5>
+                            </div>
                         </article>
-                        <article class="flex flex-col ">
-                            <h4 class="text-black text-[12px] font-bold mb-2.75">Central de ajuda</h4>
-                            <h5>Fale conosco</h5>
-                            <h5>Frete e Entrega</h5>
-                            <h5>Trocas e Devoluções</h5>
-                            <h5>Formas de Pagamento</h5>
-                            <h5>FAQ</h5>
+                        <article class="flex flex-col md:flex-col w-full md:w-full">
+                            <div
+                                class="dropdown-btn flex justify-between border-y border-[#DDDDDD] md:border-none items-center w-full">
+                                <h4 class="text-black text-[12px] py-4.5 mx-4 md:p-0 md:mx-0  font-bold md:mb-2.75">Central de ajuda
+                                </h4>
+                                <img class="seta md:hidden h-4 w-4 mx-4" src="./assets/images/icons/arrow.png"
+                                    alt="Seta para baixo">
+                            </div>
+                            <div class="dropdown-content hidden md:flex  bg-white md:bg-transparent flex-col justify-start">
+                                <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Fale Conosco</h5>
+                                <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Frete e Entrega</h5>
+                                <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Trocas e Devoluções</h5>
+                                <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Formas de Pagamento</h5>
+                                <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">FAQ</h5>
+                            </div>
                         </article>
-                        <article class="flex flex-col ">
-                            <h4 class="text-black text-[12px] font-bold mb-2.75">Atendimento</h4>
-                            <h5><b>Telefone:</b> (00) 1234-5678</h5>
-                            <h5><b>E-mail:</b> exemplo@exemplo.com.br</h5>
-                            <h5><b>Horario de atendimento:</b><br>Segunda a Sábado: 07h00 às 23h00 <br> Domingos e
-                                feriados:
-                                07h00 às 21h00</h5>
+                        <article  class="flex flex-col md:flex-col w-full md:w-full">
+                            <div
+                                class="dropdown-btn flex justify-between border-y border-[#DDDDDD] md:border-none items-center w-full">
+                                <h4 class="text-black text-[12px] py-4.5 mx-4 md:p-0 md:mx-0  font-bold md:mb-2.75">Institucional</h4>
+                                <img class="seta md:hidden h-4 w-4 mx-4" src="./assets/images/icons/arrow.png"
+                                    alt="Seta para baixo">
+                            </div>
+                            <div id="dropDownContent3" class="dropdown-content hidden md:flex bg-white md:bg-transparent flex-col justify-start">
+                                <h5 class="mx-4 my-1 md:m-0"><b>Telefone:</b> (00) 1234-5678</h5>
+                                <h5 class="mx-4 my-1 md:m-0"><b>E-mail:</b> exemplo@exemplo.com.br</h5>
+                                <h5 class="mx-4 my-1 md:m-0"><b>Horario de atendimento:</b><br>Segunda a Sábado: 07h00 às 23h00 <br> Domingos e
+                                    feriados:
+                                    07h00 às 21h00</h5>
+                            </div>
                         </article>
                     </div>
                 </div>
-                <div class="flex justify-center gap-8">
+                <div class="flex justify-center flex-wrap gap-8 mx-12.5">
                     <img src="./assets/images/icons/amex-icon.svg" alt="Logo Amex">
                     <img src="./assets/images/icons/master-icon.svg" alt="Logo MasterCard">
                     <img src="./assets/images/icons/visa-icon.svg" alt="Logo Visa">
@@ -496,7 +549,7 @@
         <div class="flex flex-col justify-center mb-10">
             <div class="container flex flex-col">
                 <div class="my-10 flex justify-center text-center">
-                    <p class="text-[12px] leading-5.5 max-w-268.75">
+                    <p class="text-[12px] leading-5.5 mx-4 max-w-268.75">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
                         tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
                         nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
@@ -515,6 +568,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="./main.js"></script>
 
 </body>
 
