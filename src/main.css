@@ -8,6 +8,14 @@
     padding-inline: 25px;
 }
 
+.swiper-pagination-bullet {
+    background-color: #838383;
+}
+.swiper-pagination-bullet-active {
+    background-color: #303030;
+}
+
+
 .swiper-button-prev,
 .swiper-button-next {
     width: 30px;
