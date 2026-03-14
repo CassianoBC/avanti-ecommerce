@@ -9,42 +9,33 @@
     <link rel="stylesheet" href="./output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Nunito Sans', sans-serif;
-            overflow-x: hidden;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
-    <div class="bg-[#005CFF] p-1">
-        <div class="container">
-            <p class="text-sm font-bold text-white text-center px-3">
-                Ganhe <span class="bg-[#6220C1] px-0.5 rounded-sm ">R$10,00</span> de desconto no seu primeiro pedido.
-                Utilize o cupom <span class="italic font-normal">DESCONTO10</span>
-            </p>
+<body class="w-full m-[0,auto] font-[Nunito_Sans] overflow-x-hidden">
+    <header class="shadow-md fixed top-0 w-full z-10 bg-white">
+        <div class="bg-[#005CFF] p-1">
+            <div class="container">
+                <p class="text-sm font-bold text-white text-center px-3">
+                    Ganhe <span class="bg-[#6220C1] px-0.5 rounded-sm ">R$10,00</span> de desconto no seu primeiro
+                    pedido.
+                    Utilize o cupom <span class="italic font-normal">DESCONTO10</span>
+                </p>
+            </div>
         </div>
-    </div>
-    <header class="pt-5 xl:pb-4.5 shadow-md">
-        <div class="container w-full px-3">
+        <div class="container pt-5 xl:pb-4.5 w-full px-3">
             <div class="flex justify-between items-center">
-                <img class="xl:hidden h-5.25 w-5.75" src="./assets/images/icons/menu-icon.svg" alt="Logo menu">
+                <img class="xl:hidden btn-menu-dropdown h-5.25 w-5.75" src="./assets/images/icons/menu-icon.svg"
+                    alt="Logo menu">
                 <div class="flex items-center justify-center xl:justify-start max-w-225  w-full gap-16.5">
                     <img class="max-w-38 block" src="./assets/images/avanti_logo.png" alt="Logo da Avanti">
                     <div
                         class="hidden lg:flex items-center justify-between  max-w-148.5 w-full border border-[#DDDDDD] rounded-[10px] ">
-                        <input class="px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]" type="text"
+                        <input class="search-input px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]" type="text"
                             placeholder="Digite aqui o que você procura">
                         <button class=" cursor-pointer p-3.25  rounded-e-[10px] ">
                             <img src="./assets/images/icons/search-icon.svg" alt="Ícone de busca">
@@ -68,44 +59,46 @@
             <div class="flex justify-center lg:hidden mt-7.5">
                 <div
                     class="flex items-center justify-between max-w-148.5 w-full border border-[#DDDDDD] rounded-[10px] ">
-                    <input class="px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]" type="text"
+                    <input class="search-input px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]" type="text"
                         placeholder="Digite aqui o que você procura">
-                    <button class=" cursor-pointer p-3.25  rounded-e-[10px] ">
+                    <button type="submit" class=" cursor-pointer p-3.25  rounded-e-[10px] ">
                         <img src="./assets/images/icons/search-icon.svg" alt="Ícone de busca">
                     </button>
                 </div>
             </div>
-            <div class="mt-5.75 flex items-center">
+            <h1 class="text-center xl:text-start xl:ml-56.25 text-[#005cff] my-1 hidden">Você buscou por: <span id="search-output"></span></h1>
+            <div class="mt-5.75 flex flex-col ">
                 <nav>
-                    <ul class="hidden xl:flex gap-11.25 text-sm">
+                    <ul class="hidden xl:flex gap-11.25 *:hover:text-[#005cff] text-sm">
                         <li>
-                            <button class="flex items-center text-center cursor-pointer">
+                            <button
+                                class="btn-menu-dropdown flex items-center text-center cursor-pointer">
                                 <img class="mr-2" src="./assets/images/icons/menu-icon.svg" alt="Logo menu">
                                 <p class="text-sm font-bold">Todas as Categorias</p>
                             </button>
                         </li>
-                        <li>
+                        <li class="btn-dropdown-department">
                             <a href="#">Departamento</a>
                         </li>
-                        <li>
+                        <li class="btn-dropdown-department">
                             <a href="#">Departamento</a>
                         </li>
-                        <li>
+                        <li class="btn-dropdown-department">
                             <a href="#">Departamento</a>
                         </li>
-                        <li>
+                        <li class="btn-dropdown-department">
                             <a href="#">Departamento</a>
                         </li>
-                        <li>
+                        <li class="btn-dropdown-department">
                             <a href="#">Departamento</a>
                         </li>
-                        <li>
+                        <li class="btn-dropdown-department">
                             <a href="#">Departamento</a>
                         </li>
-                        <li>
+                        <li class="btn-dropdown-department">
                             <a href="#">Departamento</a>
                         </li>
-                        <li>
+                        <li class="btn-dropdown-department">
                             <a href="#">Departamento</a>
                         </li>
                     </ul>
@@ -113,7 +106,164 @@
             </div>
         </div>
     </header>
-    <section class="bg-[#EBEBEB]">
+    <div id="menu-dropdown"
+        class="fixed left-1/2 -translate-x-1/2 w-full max-w-7xl bg-transparent z-10 flex-col lg:flex-row xl:top-36.25 hidden lg:shadow-xl">
+        <div
+            class="text-[14px] shadow-xl lg:shadow-none bg-[#F5F5F5] overflow-y-auto overflow-x-hidden p-[20px_27px_11px_16px] w-full lg:max-w-58.5 max-h-82.25 flex flex-col">
+            <nav>
+                <ul
+                    class="max-h-75 mr-5 w-44 flex flex-col [&_li]:mb-3 *:hover:cursor-pointer *:hover:font-bold *:hover:text-[#005cff] *:hover:underline">
+                    <li class="flex justify-between btn-dropdown-department ">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                    <li class="flex justify-between btn-dropdown-department">
+                        <a href="#">Departamento</a>
+                        <img src="./assets/images/icons/arrow.svg" alt="">
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="lg:flex hidden justify-between bg-white p-[20px_24px_11px_34px] w-full pt-4.5">
+            <div class="text-sm flex gap-31.75 [&_p]:hover:underline">
+                <article class="flex flex-col gap-3 [&_p]:cursor-pointer text-[#656565]">
+                    <h2 class="font-bold text-[#005cff]">Categoria</h2>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                </article>
+                <article class="flex flex-col gap-3 [&_p]:cursor-pointer text-[#656565]">
+                    <h2 class="font-bold text-[#005cff]">Categoria</h2>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                </article>
+                <article class="flex flex-col gap-3 [&_p]:cursor-pointer text-[#656565]">
+                    <h2 class="font-bold text-[#005cff]">Categoria</h2>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                    <p>Categoria</p>
+                </article>
+            </div>
+            <div
+                class="bg-[url('./assets/images/mug-img2.jpg')] relative text-white bg-cover w-full bg-center max-w-59 max-h-74.5 rounded-[10px] flex items-center">
+                <div class="absolute inset-0 rounded-[10px] bg-black/25"></div>
+                <div class="ml-7 relative z-1">
+                    <h1 class="text-[24px] leading-6.75 ">Confira os <br>Produtos <br> <span class="font-bold">Que <br>
+                            acabaram <br> De chegar</span></h1>
+                    <button class="border-white cursor-pointer  border mt-7 rounded-[10px] py-2.5 px-6">VER
+                        TODOS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu-department"
+        class="fixed left-1/2 -translate-x-1/2 w-full max-w-7xl bg-transparent z-10 flex-col lg:flex-row xl:top-36.25 hidden shadow-xl">
+        <div class="flex justify-between bg-white p-[20px_24px_11px_34px] max-h-82.25 w-full pt-4.5">
+            <div>
+                <h1 class="font-bold mb-4.25">Departamento</h1>
+                <div class="text-sm flex justify-center gap-10 md:gap-31.75 [&_p]:hover:underline">
+                    <article class="flex flex-col gap-3 [&_p]:cursor-pointer text-[#656565]">
+                        <h2 class="font-bold text-[#005cff]">Categoria</h2>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                    </article>
+                    <article class="flex flex-col gap-3 [&_p]:cursor-pointer text-[#656565]">
+                        <h2 class="font-bold text-[#005cff]">Categoria</h2>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                    </article>
+                    <article class="flex flex-col gap-3 [&_p]:cursor-pointer text-[#656565]">
+                        <h2 class="font-bold text-[#005cff]">Categoria</h2>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                        <p>Categoria</p>
+                    </article>
+                </div>
+            </div>
+            <div
+                class="bg-[url('./assets/images/mug-img2.jpg')] relative text-white bg-cover w-full bg-center max-w-59 max-h-74.5 rounded-[10px] hidden md:flex items-center">
+                <div class="absolute inset-0 rounded-[10px] bg-black/25"></div>
+                <div class="ml-7 relative z-1">
+                    <h1 class="text-[24px] leading-6.75 ">Confira os <br>Produtos <br> <span class="font-bold">Que <br>
+                            acabaram <br> De chegar</span></h1>
+                    <button class="border-white cursor-pointer  border mt-7 rounded-[10px] py-2.5 px-6">VER
+                        TODOS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="bg-[#EBEBEB] mt-48.5 sm:mt-43.5 lg:mt-29.25 xl:mt-38.75">
         <div class="container flex justify-center">
             <img class="w-[70%] xl:max-w-171.25 min-h-76.5 max-h-127.5 object-cover object-right flex"
                 src="./assets/images/hero-img.jpg" alt="Imagem do hero">
@@ -126,113 +276,186 @@
             </div>
         </div>
     </section>
-    <section class="mt-24 mb-24">
-        <div class="container">
-            <div class="flex justify-between mb-4.75">
-                <h2 class="text-[20px] font-bold">Lançamentos</h2>
-                <p class="text-sm font-bold hover:underline">Ver mais</p>
+    <section class="my-24">
+        <div class="container ">
+            <div class="flex justify-between items-center px-3.75 mb-4.75">
+                <h2 class="text-[16px] md:text-[20px] font-bold">Lançamentos</h2>
+                <a href="#" class="text-sm font-bold hover:underline">Ver mais</a>
             </div>
-            <div class="grid grid-cols-5 gap-6">
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
-                            <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
-                            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper w-full">
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
                             <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
-                    </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
                             <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
                             </div>
-                            <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
                     </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
                             <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
                             </div>
-                            <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
                     </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
                             <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
                             </div>
-                            <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
                     </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
                             <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
                             </div>
-                            <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
                     </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
+                            <div>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            </div>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
+                    </div>
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
+                            <div>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            </div>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
+                    </div>
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
+                            <div>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            </div>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
@@ -333,113 +556,186 @@
             </div>
         </div>
     </section>
-    <section class="mb-16">
-        <div class="container">
-            <div class="flex justify-between mb-4.75">
-                <h2 class="text-[20px] font-bold">Lançamentos</h2>
-                <p class="text-sm font-bold hover:underline">Ver mais</p>
+    <section class="my-24">
+        <div class="container ">
+            <div class="flex justify-between items-center px-3.75 mb-4.75">
+                <h2 class="text-[16px] md:text-[20px] font-bold">Lançamentos</h2>
+                <a href="#" class="text-sm font-bold hover:underline">Ver mais</a>
             </div>
-            <div class="grid grid-cols-5 gap-6">
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
-                            <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
-                            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper w-full">
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
                             <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
-                    </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
                             <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
                             </div>
-                            <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
                     </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
                             <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
                             </div>
-                            <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
                     </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
                             <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
                             </div>
-                            <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
                     </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
-                <article
-                    class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
-                    <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
-                    <span
-                        class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
-                    <div>
-                        <h3 class="mt-4">Lorem ipsum dolor sit amet consectetuer adipiscing elit</h3>
-                        <div class="flex items-center mt-1">
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
                             <div>
-                                <p class="text-[12px] line-through">R$ 100,00</p>
-                                <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
                             </div>
-                            <span
-                                class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
-                                OFF</span>
-                        </div>
-                        <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
                     </div>
-                    <button class="bg-[#005CFF] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
-                </article>
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
+                            <div>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            </div>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
+                    </div>
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
+                            <div>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            </div>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
+                    </div>
+                    <div class="swiper-slide md:justify-items-center">
+                        <article
+                            class="border text-[#303030] border-[#dddddd] rounded-[10px] relative flex flex-col p-2 max-w-59.5">
+                            <img class="max-w-55.5 max-h-55.5" src="./assets/images/product.jpg" alt="foto do produto">
+                            <span
+                                class="uppercase bg-[#00264E] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-sm absolute">novo</span>
+                            <div>
+                                <h3 class="mt-4 text-[12px] md:text-[16px]">Lorem ipsum dolor sit amet consectetuer
+                                    adipiscing elit</h3>
+                                <div class="flex items-center mt-1">
+                                    <div>
+                                        <p class="text-[12px] line-through">R$ 100,00</p>
+                                        <p class="text-[16px] text-black font-bold ">R$ 79,90</p>
+                                    </div>
+                                    <span
+                                        class="bg-[#5EC0BE] text-[11px] font-bold text-white underline rounded px-2 py-1 ml-2">10%
+                                        OFF</span>
+                                </div>
+                                <p class="text-[12px]">Ou em até <b>10x de R$ 7,90</b></p>
+                            </div>
+                            <button
+                                class="bg-[#005CFF] cursor-pointer hover:bg-[#0044cc] text-white text-sm font-bold rounded-lg py-2.5 mt-4">Comprar</button>
+                        </article>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </section>
@@ -462,7 +758,7 @@
                 <input class="bg-white rounded-lg py-4 px-6 w-full xl:w-70" type="email"
                     placeholder="Digite seu e-mail" />
                 <div class="flex items-center justify-center gap-2">
-                    <input class="border-none" type="checkbox" />
+                    <input class="border-none accent-[#005CFF]" type="checkbox" />
                     <p class="text-[12px] text-[#303030]">Estou de acordo com a <span class="underline">Política de
                             Privacidade</span></p>
                 </div>
@@ -487,13 +783,15 @@
                     </div>
                     <div class="flex flex-col md:flex-row items-center md:items-start md:justify-center md:gap-27.5">
                         <article id="dropDown1" class="flex flex-col md:flex-col w-full md:w-full">
-                            <div 
+                            <div
                                 class="dropdown-btn flex justify-between border-y md:border-none border-[#DDDDDD] items-center w-full">
-                                <h4 class="text-black text-[12px] py-4.5 mx-4 md:p-0 md:mx-0  font-bold md:mb-2.75">Institucional</h4>
+                                <h4 class="text-black text-[12px] py-4.5 mx-4 md:p-0 md:mx-0  font-bold md:mb-2.75">
+                                    Institucional</h4>
                                 <img class="seta md:hidden h-4 w-4 mx-4" src="./assets/images/icons/arrow.png"
                                     alt="Seta para baixo">
                             </div>
-                            <div class="dropdown-content md:flex hidden bg-white md:bg-transparent flex-col justify-start">
+                            <div
+                                class="dropdown-content md:flex hidden bg-white md:bg-transparent flex-col justify-start">
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Sobre Nós</h5>
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Nossas Lojas</h5>
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Privacidade e Segurança</h5>
@@ -503,12 +801,14 @@
                         <article class="flex flex-col md:flex-col w-full md:w-full">
                             <div
                                 class="dropdown-btn flex justify-between border-y border-[#DDDDDD] md:border-none items-center w-full">
-                                <h4 class="text-black text-[12px] py-4.5 mx-4 md:p-0 md:mx-0  font-bold md:mb-2.75">Central de ajuda
+                                <h4 class="text-black text-[12px] py-4.5 mx-4 md:p-0 md:mx-0  font-bold md:mb-2.75">
+                                    Central de ajuda
                                 </h4>
                                 <img class="seta md:hidden h-4 w-4 mx-4" src="./assets/images/icons/arrow.png"
                                     alt="Seta para baixo">
                             </div>
-                            <div class="dropdown-content hidden md:flex  bg-white md:bg-transparent flex-col justify-start">
+                            <div
+                                class="dropdown-content hidden md:flex  bg-white md:bg-transparent flex-col justify-start">
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Fale Conosco</h5>
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Frete e Entrega</h5>
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Trocas e Devoluções</h5>
@@ -516,17 +816,20 @@
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">FAQ</h5>
                             </div>
                         </article>
-                        <article  class="flex flex-col md:flex-col w-full md:w-full">
+                        <article class="flex flex-col md:flex-col w-full md:w-full">
                             <div
                                 class="dropdown-btn flex justify-between border-y border-[#DDDDDD] md:border-none items-center w-full">
-                                <h4 class="text-black text-[12px] py-4.5 mx-4 md:p-0 md:mx-0  font-bold md:mb-2.75">Institucional</h4>
+                                <h4 class="text-black text-[12px] py-4.5 mx-4 md:p-0 md:mx-0  font-bold md:mb-2.75">
+                                    Institucional</h4>
                                 <img class="seta md:hidden h-4 w-4 mx-4" src="./assets/images/icons/arrow.png"
                                     alt="Seta para baixo">
                             </div>
-                            <div id="dropDownContent3" class="dropdown-content hidden md:flex bg-white md:bg-transparent flex-col justify-start">
+                            <div id="dropDownContent3"
+                                class="dropdown-content hidden md:flex bg-white md:bg-transparent flex-col justify-start">
                                 <h5 class="mx-4 my-1 md:m-0"><b>Telefone:</b> (00) 1234-5678</h5>
                                 <h5 class="mx-4 my-1 md:m-0"><b>E-mail:</b> exemplo@exemplo.com.br</h5>
-                                <h5 class="mx-4 my-1 md:m-0"><b>Horario de atendimento:</b><br>Segunda a Sábado: 07h00 às 23h00 <br> Domingos e
+                                <h5 class="mx-4 my-1 md:m-0"><b>Horario de atendimento:</b><br>Segunda a Sábado: 07h00
+                                    às 23h00 <br> Domingos e
                                     feriados:
                                     07h00 às 21h00</h5>
                             </div>
@@ -569,6 +872,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="./main.js"></script>
 
 </body>
