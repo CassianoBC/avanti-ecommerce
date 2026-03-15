@@ -3,6 +3,7 @@ const menuDropdownBtn = document.querySelectorAll('.btn-menu-dropdown');
 const menuDropdown = document.getElementById('menu-dropdown');
 const menuDropdownDepartment = document.getElementById('menu-department');
 const menuDropdownDepartmentBtn = document.querySelectorAll('.btn-dropdown-department');
+const btnClickableDepartment = document.querySelectorAll('.click-dropdown-department');
 const searchOutput = document.getElementById('search-output');
 const searchButtons = document.querySelectorAll('.search-input + button');
 const searchHeading = searchOutput ? searchOutput.closest('h1') : null;
@@ -21,6 +22,28 @@ function updateSearchOutput(value) {
     }
 }
 
+function openMenuDropdown() {
+    searchHeading.classList.add('hidden');
+    menuDropdown.classList.remove('hidden');
+    menuDropdown.classList.add('flex');
+}
+
+function closeMenuDropdown() {
+    menuDropdown.classList.add('hidden');
+    menuDropdown.classList.remove('flex');
+}
+
+function openDepartmentDropdown() {
+    searchHeading.classList.add('hidden');
+    menuDropdownDepartment.classList.remove('hidden');
+    menuDropdownDepartment.classList.add('flex');
+}
+
+function closeDepartmentDropdown() {
+    menuDropdownDepartment.classList.add('hidden');
+    menuDropdownDepartment.classList.remove('flex');
+}
+
 searchButtons.forEach(button => {
     button.addEventListener('click', function (event) {
         event.preventDefault();
@@ -31,18 +54,12 @@ searchButtons.forEach(button => {
         if (!relatedInput) return;
 
         updateSearchOutput(relatedInput.value);
+
+        relatedInput.value = '';
+        closeDepartmentDropdown();
+        closeMenuDropdown();
     });
 });
-
-function closeMenuDropdown() {
-    menuDropdown.classList.add('hidden');
-    menuDropdown.classList.remove('flex');
-}
-
-function closeDepartmentDropdown() {
-    menuDropdownDepartment.classList.add('hidden');
-    menuDropdownDepartment.classList.remove('flex');
-}
 
 dropdowns.forEach(btn => {
     btn.addEventListener('click', function () {
@@ -58,23 +75,33 @@ dropdowns.forEach(btn => {
 });
 
 menuDropdownBtn.forEach(btn => {
-    btn.addEventListener('click', function () {
-        menuDropdown.classList.toggle('hidden');
-        menuDropdown.classList.toggle('flex');
+    btn.addEventListener('mouseenter', function () {
+        openMenuDropdown();
         closeDepartmentDropdown();
     });
 });
 
-menuDropdownDepartmentBtn.forEach(btn => {
+btnClickableDepartment.forEach(btn => {
     btn.addEventListener('click', function () {
-        menuDropdownDepartment.classList.toggle('hidden');
-        menuDropdownDepartment.classList.toggle('flex');
+        closeMenuDropdown();
+        openDepartmentDropdown();
+    });
+});
+
+menuDropdownDepartmentBtn.forEach(btn => {
+    btn.addEventListener('mouseenter', function () {
+        closeDepartmentDropdown();
+        openDepartmentDropdown();
         closeMenuDropdown();
     });
 });
 
 menuDropdownDepartment.addEventListener('mouseleave', function() {
     closeDepartmentDropdown();
+});
+
+menuDropdown.addEventListener('mouseleave', function() {
+    closeMenuDropdown();
 });
 
 document.addEventListener('click', function (event) {
@@ -89,14 +116,14 @@ document.addEventListener('click', function (event) {
     }
 });
 
-
-
-
-
 const swiper = new Swiper('.swiper', {
     slidesPerView: 2,
     spaceBetween: 15,
     breakpoints: {
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+        },
         1024: {
             slidesPerView: 3,
             spaceBetween: 0,
