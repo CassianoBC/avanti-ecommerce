@@ -27,17 +27,24 @@ Swiper.js (slider)
 
 
 ## 🛠️ Como executar o projeto
-### Clone o repositório
-git clone https://github.com/seu-usuario/seu-repo.git
+1. **Clone o repositório:**
+   
+   ```bash
+   https://github.com/CassianoBC/avanti-ecommerce.git
+   ```
+   
+2. **Entre na pasta**
 
-### Acesse a pasta
-cd seu-repo
+    ```bash
+   cd avanti-ecommerce
+   ```
 
-### Baixe as dependências 
-npm install
+3. **Instale as dependências**
 
-### Para compilar TailwindCSS
-npm run dev
+    ```bash
+   npm install
+   ```
+  
+4. **Abra o arquivo index.html no navegador**
 
-### Abra o arquivo index.html no navegador
-No VsCode recomendo uso da extensão Live Server
+     Recomendo uso da extensão Live Server
