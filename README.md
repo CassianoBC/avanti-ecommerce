@@ -2,7 +2,7 @@
 
 ![image](https://raw.githubusercontent.com/CassianoBC/avanti-ecommerce/refs/heads/main/src/assets/images/readme-img.png)
 
-Interface de um e-commerce moderno desenvolvida com HTML, CSS, JavaScript puro e TailwindCSS. O projeto foca em interatividade, responsividade e experiência do usuário.
+Interface de um e-commerce moderno desenvolvida com HTML, CSS, JavaScript puro e TailwindCSS. O projeto foca em interatividade e responsividade.
 
 ## 🚀 Tecnologias utilizadas
 
