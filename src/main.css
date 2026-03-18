@@ -43,15 +43,20 @@
 }
 
 .swiper-button-next::after {
-    margin-top: 5px;
+    margin-top: 3px;
+    margin-left: 1px;
     content: url(./assets/images/icons/right-arrow.svg);
-
-    hover
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .swiper-button-prev::after {
     margin-top: 2px;
     content: url(./assets/images/icons/left-arrow.svg);
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .swiper-button-prev svg,
