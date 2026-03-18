@@ -34,9 +34,9 @@
                 <div class="flex items-center justify-center xl:justify-start max-w-225  w-full gap-16.5">
                     <img class="max-w-38 block" src="./assets/images/avanti_logo.png" alt="Logo da Avanti">
                     <div
-                        class="hidden lg:flex items-center justify-between  max-w-148.5 w-full border border-[#DDDDDD]  rounded-[10px] ">
+                        class="hidden focus-within:border-blue-500 lg:flex items-center justify-between  max-w-148.5 w-full border border-[#DDDDDD]  rounded-[10px] ">
                         <input
-                            class="search-input px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]"
+                            class="search-input outline-none px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]"
                             type="text" placeholder="Digite aqui o que você procura">
                         <button class="cursor-pointer p-3.25 rounded-e-[10px] hover:bg-[#f0f0f0]">
                             <img src="./assets/images/icons/search-icon.svg" alt="Ícone de busca">
@@ -59,8 +59,9 @@
             </div>
             <div class="flex justify-center lg:hidden mt-7.5">
                 <div
-                    class="flex items-center justify-between max-w-148.5 w-full border border-[#DDDDDD] rounded-[10px] ">
-                    <input class="search-input px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]"
+                    class="flex focus-within:border-blue-500 items-center justify-between max-w-148.5 w-full border border-[#DDDDDD] rounded-[10px] ">
+                    <input
+                        class="search-input outline-none px-6 py-2.5 w-full text-black placeholder:text-black rounded-s-[10px]"
                         type="text" placeholder="Digite aqui o que você procura">
                     <button type="submit" class=" cursor-pointer p-3.25  rounded-e-[10px] ">
                         <img src="./assets/images/icons/search-icon.svg" alt="Ícone de busca">
@@ -108,10 +109,10 @@
         </div>
     </header>
     <div id="menu-dropdown"
-        class="fixed left-1/2 -translate-x-1/2 w-full max-w-7xl bg-transparent z-10 flex-col lg:flex-row xl:top-36.25 hidden lg:shadow-xl">
+        class="fixed left-1/2 -translate-x-1/2 transition-all duration-300 ease-out w-full max-w-7xl bg-transparent z-10 flex-col lg:flex-row xl:top-36.25 hidden lg:shadow-xl">
         <div
-            class="text-[14px] shadow-xl lg:shadow-none bg-[#F5F5F5] overflow-y-auto overflow-x-hidden p-[20px_27px_11px_16px] w-full lg:max-w-58.5 max-h-82.25 flex items-start justify-between flex-row lg:flex-col">
-            <nav class="">
+            class="text-[14px] shadow-xl lg:shadow-none bg-[#F5F5F5] overflow-y-auto overflow-x-hidden w-full lg:max-w-58.5 max-h-82.25 flex items-start justify-between flex-row lg:flex-col">
+            <nav class="m-[20px_27px_11px_16px]">
                 <ul
                     class="max-h-75 mr-5 w-44 flex flex-col [&_li]:mb-3 *:hover:cursor-pointer *:hover:font-bold *:hover:text-[#005cff] *:hover:underline">
                     <li class="flex justify-between click-dropdown-department ">
@@ -168,8 +169,6 @@
                     </li>
                 </ul>
             </nav>
-            <button
-                class="btn-close lg:hidden uppercase cursor-pointer px-3 py-4 border rounded-lg fixed right-4 leading-0 bg-white text-sm">X</button>
         </div>
         <div class="lg:flex hidden justify-between bg-white p-[20px_24px_11px_34px] w-full pt-4.5">
             <div class="text-sm flex gap-31.75 [&_p]:hover:underline">
@@ -220,11 +219,7 @@
         class="fixed left-1/2 -translate-x-1/2 w-full max-w-7xl bg-transparent z-10 flex-col lg:flex-row xl:top-36.25 hidden shadow-xl">
         <div class="flex justify-between bg-white p-[20px_24px_11px_34px] max-h-82.25 w-full pt-4.5">
             <div class="w-full md:w-auto">
-                <div class="flex w-full justify-between items-start">
-                    <h1 class="font-bold mb-4.25">Departamento</h1>
-                    <button
-                        class="btn-close lg:hidden uppercase cursor-pointer leading-0 p-3 border rounded-lg bg-white text-sm">X</button>
-                </div>
+                <h1 class="font-bold mb-4.25">Departamento</h1>
                 <div class="text-sm flex justify-between gap-10 md:gap-31.75 [&_p]:hover:underline">
                     <article class="flex flex-col gap-3 [&_p]:cursor-pointer text-[#656565]">
                         <h2 class="font-bold text-[#005cff]">Categoria</h2>
@@ -797,7 +792,8 @@
                                 <img class="seta md:hidden h-4 w-4 mx-4" src="./assets/images/icons/arrow.png"
                                     alt="Seta para baixo">
                             </div>
-                            <div class="dropdown-content md:flex hidden md:bg-transparent flex-col justify-start">
+                            <div
+                                class="dropdown-content transition-all ease-out duration-700 md:flex hidden md:bg-transparent flex-col justify-start">
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Sobre Nós</h5>
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Nossas Lojas</h5>
                                 <h5 class="mx-4 my-1 md:m-0 cursor-pointer hover:underline">Privacidade e Segurança</h5>
